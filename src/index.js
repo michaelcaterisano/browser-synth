@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Triggers from './Triggers';
 import './index.css';
 
 ReactDOM.render(
-  <App />,
+  <Triggers />,
   document.getElementById('root')
 );

@@ -1,0 +1,13 @@
+.widget {
+    width: 30%;
+    height: 100px;
+    overflow: scroll;
+}
+.red {
+    background: red;
+    height: 20px;
+}
+.blue {
+    background: blue;
+    height: 20px;
+}
