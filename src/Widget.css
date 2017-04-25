@@ -1,7 +1,8 @@
 .widget {
-    width: 30%;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     overflow: scroll;
+    margin: 10px;
 }
 .red {
     background: red;

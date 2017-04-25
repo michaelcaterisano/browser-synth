@@ -13,6 +13,22 @@ class Widget extends Component {
                 <div className="blue"></div>
                 <div className="red"></div>
                 <div className="blue"></div>
+                <div className="red"></div>
+                <div className="blue"></div>
+                <div className="red"></div>
+                <div className="blue"></div>
+                <div className="red"></div>
+                <div className="blue"></div>
+                <div className="red"></div>
+                <div className="blue"></div>
+                <div className="red"></div>
+                <div className="blue"></div>
+                <div className="red"></div>
+                <div className="blue"></div>
+                <div className="red"></div>
+                <div className="blue"></div>
+                <div className="red"></div>
+                <div className="blue"></div>
             </div>
         )
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom'
+import RaisedButton from 'material-ui/RaisedButton'
 import Widget from './Widget'
+import './Triggers.css'
 
 class Triggers extends Component {
     constructor() {
@@ -26,11 +27,17 @@ class Triggers extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.add.bind(this)}>add</button>
-                <button onClick={this.remove.bind(this)}>remove</button>
-                {this.state.widgets.map(function(widget, index) {
-                    return widget
-                })}
+                <div className="triggers-wrapper">
+                    <div className="triggers-container">
+                        <RaisedButton label="add" onClick={this.add.bind(this)}/>
+                        <RaisedButton label="remove" onClick={this.remove.bind(this)} />
+                    </div>
+                </div>
+                <div className="widgets-container">
+                    {this.state.widgets.map(function(widget, index) {
+                        return widget
+                    })}
+                </div>
             </div>
         )
     }

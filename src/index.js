@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Triggers from './Triggers';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import App from './App';
 import './index.css';
 
+injectTapEventPlugin();
+
+
 ReactDOM.render(
-  <Triggers />,
+  <App />,
   document.getElementById('root')
 );
