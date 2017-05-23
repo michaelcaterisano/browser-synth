@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Triggers from './Triggers'
-
+import View from './Components/View/View'
 
 class App extends Component {
     render () {
         return (
             <MuiThemeProvider>
-                <Triggers />
+                <View />
             </MuiThemeProvider>
         )
     }

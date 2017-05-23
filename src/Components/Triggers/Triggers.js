@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton'
-import Widget from '../Widget/Widget'
+import Synth from '../Synth/Synth'
+// import Poti from '../Poti/Poti'
 import './Triggers.css'
 
 class Triggers extends Component {
@@ -11,7 +12,7 @@ class Triggers extends Component {
     add() {
         const widgets = this.state.widgets
         this.setState({
-            widgets: widgets.concat(<Widget />)
+            widgets: widgets.concat(<Synth />)
         })
     }
     remove() {
