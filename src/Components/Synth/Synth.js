@@ -3,7 +3,7 @@ import Keyboard from '../Keyboard/Keyboard'
 import Oscillator from '../Oscillator/Oscillator'
 import Poti from '../Poti/Poti'
 import Tone from 'tone'
-import './synth.scss'
+import './synth.css'
 
 
 class Synth extends React.Component {
@@ -17,7 +17,7 @@ class Synth extends React.Component {
 		}).toMaster()
     this.state = {
       frequencies: {
-        0: 440
+        0: 0
       },
       detunes: {
         0: 0
