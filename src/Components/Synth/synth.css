@@ -2,244 +2,191 @@
   position: relative;
   overflow: hidden;
   background: black;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  height: 222px;
-}
-.Keyboard:before, .Keyboard:after {
-  content: '';
-  pointer-events: none;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  z-index: 2;
-}
-.Keyboard:before {
-  box-shadow: 0 4px 2px #d52, 0 4px 0 #a55;
-  height: 4px;
-  top: -4px;
-}
-.Keyboard:after {
-  top: 0;
-  height: 100%;
-  border-radius: 5px;
-  box-shadow: 0 0 0 2px black inset, 0 0 0 4px black;
-}
-.Keyboard .key {
-  cursor: pointer;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  border-style: none !important;
-}
-.Keyboard .key .top {
-  border-style: none !important;
-}
-.Keyboard .black {
-  z-index: 0;
-  background-color: #111;
-  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2)), -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), -webkit-linear-gradient(left, rgba(0, 0, 0, 0.3) 0px, rgba(255, 255, 255, 0.3) 1px, transparent 6px), -webkit-linear-gradient(right, rgba(0, 0, 0, 0.3) 0px, rgba(255, 255, 255, 0.3) 1px, transparent 6px);
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2)), radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), linear-gradient(to right, rgba(0, 0, 0, 0.3) 0px, rgba(255, 255, 255, 0.3) 1px, transparent 6px), linear-gradient(to left, rgba(0, 0, 0, 0.3) 0px, rgba(255, 255, 255, 0.3) 1px, transparent 6px);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset, 1px 0 0 0 #333333 inset, 0 1px 2px rgba(178, 178, 154, 0.4), 0 0 0 2px #000, 0 40px 0 2px #333;
-  margin-top: -10px !important;
-}
-.Keyboard .black._active {
-  -webkit-transform: translate3d(0, -22.5px, 0);
-          transform: translate3d(0, -22.5px, 0);
-}
-.Keyboard .black:before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  right: 100%;
-  border-radius: 2px;
-  margin-right: -1px;
-  margin-top: -2px;
-  border: 10px solid transparent;
-  border-bottom-color: #000;
-  border-right-color: #000;
-  -webkit-transform-origin: 100% 0%;
-          transform-origin: 100% 0%;
-  -webkit-transform: rotate(15deg);
-          transform: rotate(15deg);
-}
-.Keyboard .black:after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 100%;
-  border-radius: 2px;
-  margin-left: -1px;
-  margin-top: -2px;
-  border: 10px solid transparent;
-  border-bottom-color: #000;
-  border-left-color: #000;
-  -webkit-transform-origin: 0% 0%;
-          transform-origin: 0% 0%;
-  -webkit-transform: rotate(-15deg);
-          transform: rotate(-15deg);
-}
-.Keyboard .white {
-  z-index: 1;
-  background-color: #EDED68;
-  background-image: -webkit-linear-gradient(top, white, rgba(255, 255, 255, 0.8)), -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
-  background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.8)), radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
-  background-position: center center, 15px 50px, center center;
-  background-size: 100% 100%, 300% 100%, 100% 100%;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset, 1px 0 0 0 white inset, 0 0 0 1px #b2b29a, 0 20px 0 -1px #a9a999, 0 20px 0 0 #c1c1ae, 0 20px 0 1px #b2b29a;
-}
-.Keyboard .white._active {
-  background-size: 100% 100%,100% 100%,100% 100%, 300% 100%, 100% 100%;
-  background-position: center center, center center, center center, 15px 50px, center center;
-  background-image: -webkit-linear-gradient(top, white, rgba(255, 255, 255, 0.7)), -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5), transparent 8px), -webkit-linear-gradient(right, rgba(0, 0, 0, 0.5), transparent 6px), -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
-  background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.7)), linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent 8px), linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent 6px), radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
-}
-.Keyboard .white .top {
-  box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.1) inset, 1px 0 0 0 white inset, 0 -1px 0 0 white, 0 -1px 0 1px #b2b29a;
-  margin-bottom: -1px;
-}
-.Keyboard .white .top:before, .Keyboard .white .top:after {
-  position: absolute;
-  bottom: 0;
-  height: 4px;
-  width: 4px;
-  margin-bottom: 2px;
-}
-.Keyboard .white .top:before {
-  left: 100%;
-  border-radius: 0 0 0 2px;
-  margin-left: 1px;
-  box-shadow: -1px 0 0 0 #b2b29a, 0 1px 0 0 #b2b29a, -3px 3px 0 #fff;
-}
-.Keyboard .white .top:after {
-  right: 100%;
-  margin-right: 1px;
-  border-radius: 0 0 2px 0;
-  box-shadow: 1px 0 0 0 #b2b29a, 0 1px 0 0 #b2b29a, 3px 3px 0 #fff;
-}
-.Keyboard .white.left .top:before {
-  content: '';
-}
-.Keyboard .white.right .top:after {
-  content: '';
-}
-.Keyboard .white.center {
-  border-radius: 2px;
-}
-.Keyboard .white.center .top:before, .Keyboard .white.center .top:after {
-  content: '';
-}
+  user-select: none;
+  height: 222px; }
+  .Keyboard:before, .Keyboard:after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2; }
+  .Keyboard:before {
+    box-shadow: 0 4px 2px #d52, 0 4px 0 #a55;
+    height: 4px;
+    top: -4px; }
+  .Keyboard:after {
+    top: 0;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 0 2px black inset, 0 0 0 4px black; }
+  .Keyboard .key {
+    cursor: pointer;
+    transform: translate3d(0, 0, 0);
+    border-style: none !important; }
+    .Keyboard .key .top {
+      border-style: none !important; }
+  .Keyboard .black {
+    z-index: 0;
+    background-color: #111;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2)), radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), linear-gradient(to right, rgba(0, 0, 0, 0.3) 0px, rgba(255, 255, 255, 0.3) 1px, transparent 6px), linear-gradient(to left, rgba(0, 0, 0, 0.3) 0px, rgba(255, 255, 255, 0.3) 1px, transparent 6px);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset, 1px 0 0 0 #333333 inset, 0 1px 2px rgba(178, 178, 154, 0.4), 0 0 0 2px #000, 0 40px 0 2px #333;
+    margin-top: -10px !important; }
+    .Keyboard .black._active {
+      transform: translate3d(0, -22.5px, 0); }
+    .Keyboard .black:before {
+      content: '';
+      position: absolute;
+      top: 100%;
+      right: 100%;
+      border-radius: 2px;
+      margin-right: -1px;
+      margin-top: -2px;
+      border: 10px solid transparent;
+      border-bottom-color: #000;
+      border-right-color: #000;
+      transform-origin: 100% 0%;
+      transform: rotate(15deg); }
+    .Keyboard .black:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 100%;
+      border-radius: 2px;
+      margin-left: -1px;
+      margin-top: -2px;
+      border: 10px solid transparent;
+      border-bottom-color: #000;
+      border-left-color: #000;
+      transform-origin: 0% 0%;
+      transform: rotate(-15deg); }
+  .Keyboard .white {
+    z-index: 1;
+    background-color: #EDED68;
+    background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.8)), radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
+    background-position: center center, 15px 50px, center center;
+    background-size: 100% 100%, 300% 100%, 100% 100%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset, 1px 0 0 0 white inset, 0 0 0 1px #b2b29a, 0 20px 0 -1px #a9a999, 0 20px 0 0 #c1c1ae, 0 20px 0 1px #b2b29a; }
+    .Keyboard .white._active {
+      background-size: 100% 100%,100% 100%,100% 100%, 300% 100%, 100% 100%;
+      background-position: center center, center center, center center, 15px 50px, center center;
+      background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.7)), linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent 8px), linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent 6px), radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1)); }
+    .Keyboard .white .top {
+      box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.1) inset, 1px 0 0 0 white inset, 0 -1px 0 0 white, 0 -1px 0 1px #b2b29a;
+      margin-bottom: -1px; }
+      .Keyboard .white .top:before, .Keyboard .white .top:after {
+        position: absolute;
+        bottom: 0;
+        height: 4px;
+        width: 4px;
+        margin-bottom: 2px; }
+      .Keyboard .white .top:before {
+        left: 100%;
+        border-radius: 0 0 0 2px;
+        margin-left: 1px;
+        box-shadow: -1px 0 0 0 #b2b29a, 0 1px 0 0 #b2b29a, -3px 3px 0 #fff; }
+      .Keyboard .white .top:after {
+        right: 100%;
+        margin-right: 1px;
+        border-radius: 0 0 2px 0;
+        box-shadow: 1px 0 0 0 #b2b29a, 0 1px 0 0 #b2b29a, 3px 3px 0 #fff; }
+    .Keyboard .white.left .top:before {
+      content: ''; }
+    .Keyboard .white.right .top:after {
+      content: ''; }
+    .Keyboard .white.center {
+      border-radius: 2px; }
+      .Keyboard .white.center .top:before, .Keyboard .white.center .top:after {
+        content: ''; }
 
 .Poti {
-  color: white;
-}
-.Poti .PotiIndicator {
-  color: transparent;
-}
-.Poti .PotiIndicator:before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 2px;
-  background: white;
-  margin-bottom: 5px;
-  border-radius: 100%;
-}
-.Poti .PotiIndicator .label {
-  color: white;
-}
-.Poti .PotiIndicator._numbered:before {
-  content: normal;
-}
-.Poti .PotiMarker {
-  z-index: 2;
-  color: red;
-  font-size: 6px;
-  will-change: transform;
-}
-.Poti .PotiKnob {
-  z-index: 2;
-  box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.1) inset, 0 0 0 2px #111 inset;
-  margin-top: -5px;
-}
-.Poti .PotiKnob:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  height: 100%;
-  width: 110%;
-  padding: 4px 0;
-  border-radius: 100%;
-  box-shadow: 0 2px 0 1px #111, 0 2px 0 6px #1E1E1E, 0 2px 0 7px #111;
-  background-color: #1E1E1E;
-  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 0, transparent 10px), -webkit-linear-gradient(left, transparent 20%, rgba(255, 255, 255, 0.2) 40%, transparent 70%);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0, transparent 10px), linear-gradient(to right, transparent 20%, rgba(255, 255, 255, 0.2) 40%, transparent 70%);
-}
-.Poti .PotiKnob:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 100%;
-  background-color: #1E1E1E;
-  background-image: -webkit-radial-gradient(closest-corner, rgba(17, 17, 17, 0.2) 10%, rgba(17, 17, 17, 0.1) 60%, rgba(255, 255, 255, 0.1) 80%);
-  background-image: radial-gradient(closest-corner, rgba(17, 17, 17, 0.2) 10%, rgba(17, 17, 17, 0.1) 60%, rgba(255, 255, 255, 0.1) 80%);
-  box-shadow: inherit;
-}
-.Poti .PotiMarker {
-  z-index: 2;
-  color: red;
-  font-size: 6px;
-  will-change: transform;
-}
-.Poti._colored .PotiIndicator:before {
-  height: 4px;
-  margin-bottom: 2px;
-  border-radius: 0;
-}
-.Poti._colored .PotiKnob {
-  z-index: 2;
-  box-shadow: 0 0 0 2px #1E1E1E inset;
-  margin-top: -5px;
-  background: currentColor;
-  border-width: 0;
-  position: relative;
-}
-.Poti._colored .PotiKnob:before {
-  height: 120%;
-  width: 110%;
-  padding: 1px;
-  box-shadow: 0 1px 0 1px #111;
-  top: 0;
-}
-.Poti._colored .PotiKnob:after {
-  background-color: inherit;
-}
-.Poti._colored .PotiMarker {
-  z-index: 2;
-  color: #111;
-  font-size: 6px;
-}
+  color: white; }
+  .Poti .PotiIndicator {
+    color: transparent; }
+    .Poti .PotiIndicator:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 2px;
+      background: white;
+      margin-bottom: 5px;
+      border-radius: 100%; }
+    .Poti .PotiIndicator .label {
+      color: white; }
+    .Poti .PotiIndicator._numbered:before {
+      content: normal; }
+  .Poti .PotiMarker {
+    z-index: 2;
+    color: red;
+    font-size: 6px;
+    will-change: transform; }
+  .Poti .PotiKnob {
+    z-index: 2;
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.1) inset, 0 0 0 2px #111 inset;
+    margin-top: -5px; }
+    .Poti .PotiKnob:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      width: 110%;
+      padding: 4px 0;
+      border-radius: 100%;
+      box-shadow: 0 2px 0 1px #111, 0 2px 0 6px #1E1E1E, 0 2px 0 7px #111;
+      background-color: #1E1E1E;
+      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0, transparent 10px), linear-gradient(to right, transparent 20%, rgba(255, 255, 255, 0.2) 40%, transparent 70%); }
+    .Poti .PotiKnob:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 100%;
+      background-color: #1E1E1E;
+      background-image: radial-gradient(closest-corner, rgba(17, 17, 17, 0.2) 10%, rgba(17, 17, 17, 0.1) 60%, rgba(255, 255, 255, 0.1) 80%);
+      box-shadow: inherit; }
+  .Poti .PotiMarker {
+    z-index: 2;
+    color: red;
+    font-size: 6px;
+    will-change: transform; }
+  .Poti._colored .PotiIndicator:before {
+    height: 4px;
+    margin-bottom: 2px;
+    border-radius: 0; }
+  .Poti._colored .PotiKnob {
+    z-index: 2;
+    box-shadow: 0 0 0 2px #1E1E1E inset;
+    margin-top: -5px;
+    background: currentColor;
+    border-width: 0;
+    position: relative; }
+    .Poti._colored .PotiKnob:before {
+      height: 120%;
+      width: 110%;
+      padding: 1px;
+      box-shadow: 0 1px 0 1px #111;
+      top: 0; }
+    .Poti._colored .PotiKnob:after {
+      background-color: inherit; }
+  .Poti._colored .PotiMarker {
+    z-index: 2;
+    color: #111;
+    font-size: 6px; }
 
 .Poti._colored.orange .PotiKnob {
-  color: orange;
-}
+  color: orange; }
 
 .Poti._colored.red .PotiKnob {
-  color: red;
-}
+  color: red; }
 
 .Poti._colored.yellow .PotiKnob {
-  color: yellow;
-}
+  color: yellow; }
 
 .oscillator {
   border-radius: 4px;
@@ -247,8 +194,7 @@
   background: #333;
   padding: 10px;
   margin: 40px 0;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset;
-}
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset; }
 
 .synth {
   position: relative;
@@ -258,27 +204,22 @@
   padding: 0 20px;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3) inset;
   background-color: #522914;
-  background-image: -webkit-radial-gradient(6px 120px at 10px 90px, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 40%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.05) 60%, rgba(0, 0, 0, 0) 60%), -webkit-radial-gradient(8px 180px at 70px 130px, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 40%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.05) 60%, rgba(0, 0, 0, 0) 60%), -webkit-radial-gradient(6px 120px at 20px 120px, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 40%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.05) 60%, rgba(0, 0, 0, 0) 60%), -webkit-linear-gradient(left, transparent 10%, rgba(0, 0, 0, 0.05) 15%, transparent 40%, rgba(255, 255, 255, 0.05) 60%, transparent 70%), -webkit-linear-gradient(left, transparent 10%, rgba(0, 0, 0, 0.05) 10%, transparent 50%, rgba(255, 255, 255, 0.05) 60%, transparent 65%), -webkit-linear-gradient(left, transparent 10%, rgba(0, 0, 0, 0.05) 10%, transparent 55%, rgba(255, 255, 255, 0.05) 60%, transparent 60%), -webkit-linear-gradient(bottom left, rgba(0, 0, 0, 0.2), transparent 60%);
-  background-image: radial-gradient(6px 120px at 10px 90px, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 40%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.05) 60%, rgba(0, 0, 0, 0) 60%), radial-gradient(8px 180px at 70px 130px, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 40%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.05) 60%, rgba(0, 0, 0, 0) 60%), radial-gradient(6px 120px at 20px 120px, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 40%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.05) 60%, rgba(0, 0, 0, 0) 60%), linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.05) 15%, transparent 40%, rgba(255, 255, 255, 0.05) 60%, transparent 70%), linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.05) 10%, transparent 50%, rgba(255, 255, 255, 0.05) 60%, transparent 65%), linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.05) 10%, transparent 55%, rgba(255, 255, 255, 0.05) 60%, transparent 60%), linear-gradient(to top right, rgba(0, 0, 0, 0.2), transparent 60%);
+  background-image: radial-gradient(10px 90px, 6px 120px, transparent 10%, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 40%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.05) 60%, transparent 60%), radial-gradient(70px 130px, 8px 180px, transparent 10%, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 40%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.05) 60%, transparent 60%), radial-gradient(20px 120px, 6px 120px, transparent 10%, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 40%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.05) 60%, transparent 60%), linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.05) 15%, transparent 40%, rgba(255, 255, 255, 0.05) 60%, transparent 70%), linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.05) 10%, transparent 50%, rgba(255, 255, 255, 0.05) 60%, transparent 65%), linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.05) 10%, transparent 55%, rgba(255, 255, 255, 0.05) 60%, transparent 60%), linear-gradient(to top right, rgba(0, 0, 0, 0.2), transparent 60%);
   background-size: 250px 200px, 120px 300px,100px 500px,8px 100%, 12px 100%, 20px 100%, 100% 100%;
-  box-shadow: 0 -26px 0 0 rgba(0, 0, 0, 0.5) inset, 0 -26px 10px 0 rgba(255, 255, 255, 0.2) inset;
-}
-.synth:before, .synth:after {
-  content: '';
-  position: absolute;
-  top: -3px;
-  bottom: -3px;
-  width: 40px;
-  background-color: #66331a;
-  background-image: inherit;
-  background-size: inherit;
-  border-radius: 3px;
-}
-.synth:before {
-  left: -30px;
-  box-shadow: 0 -32px 0 0 rgba(0, 0, 0, 0.5) inset, 0 -32px 10px 0 rgba(255, 255, 255, 0.2) inset, 10px 0 10px -10px rgba(0, 0, 0, 0.6);
-}
-.synth:after {
-  right: -30px;
-  box-shadow: 0 -32px 0 0 rgba(0, 0, 0, 0.5) inset, 0 -32px 10px 0 rgba(255, 255, 255, 0.2) inset, -10px 0 10px -10px rgba(0, 0, 0, 0.6);
-}
+  box-shadow: 0 -26px 0 0 rgba(0, 0, 0, 0.5) inset, 0 -26px 10px 0 rgba(255, 255, 255, 0.2) inset; }
+  .synth:before, .synth:after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    bottom: -3px;
+    width: 40px;
+    background-color: #66331a;
+    background-image: inherit;
+    background-size: inherit;
+    border-radius: 3px; }
+  .synth:before {
+    left: -30px;
+    box-shadow: 0 -32px 0 0 rgba(0, 0, 0, 0.5) inset, 0 -32px 10px 0 rgba(255, 255, 255, 0.2) inset, 10px 0 10px -10px rgba(0, 0, 0, 0.6); }
+  .synth:after {
+    right: -30px;
+    box-shadow: 0 -32px 0 0 rgba(0, 0, 0, 0.5) inset, 0 -32px 10px 0 rgba(255, 255, 255, 0.2) inset, -10px 0 10px -10px rgba(0, 0, 0, 0.6); }

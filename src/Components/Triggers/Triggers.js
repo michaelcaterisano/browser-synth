@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton'
 import Synth from '../Synth/Synth'
 // import Poti from '../Poti/Poti'
-import './Triggers.css'
+// import './Triggers.css'
 
 class Triggers extends Component {
     constructor() {
