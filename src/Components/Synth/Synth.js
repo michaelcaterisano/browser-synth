@@ -18,7 +18,7 @@ class Synth extends React.Component {
 		}).toMaster()
     this.state = {
       frequencies: {
-        0: 0
+        0: 220
       },
       detunes: {
         0: 0
@@ -47,11 +47,68 @@ class Synth extends React.Component {
     this.setState({
         volumes: volume
     });
-    console.log(volume)
   }
 
-  setOctave(event, value) {
-    console.log(value)
+  setOctave(osc, value) {
+    let octaves = this.state.octaves;
+    let prevOctave = octaves[0];
+    octaves[0] = value;
+    this.setState({
+      octaves: octaves
+    });
+    // console.log(`prevoct: ${prevOctave}`)
+    // console.log(`this.state.octaves: ${this.state.octaves[0]}`)
+
+    switch (value) {
+      case 0:
+        let detunes_0 = this.state.detunes;
+        detunes_0[0] = this.state.detunes[0] + 1200 * (0 - prevOctave);
+        this.setState({
+          detunes: detunes_0
+        })
+        console.log(`detune: ${this.state.detunes[0]}`);
+        break;
+      case 1:
+        let detunes_1 = this.state.detunes;
+        detunes_1[0] = this.state.detunes[0] + 1200 * (1 - prevOctave);
+        this.setState({
+          detunes: detunes_1
+        })
+        console.log(`detune: ${this.state.detunes[0]}`);
+        break;
+      case 2:
+        let detunes_2 = this.state.detunes;
+        detunes_2[0] = this.state.detunes[0] + 1200 * (2 - prevOctave);
+        this.setState({
+          detunes: detunes_2
+        })
+        console.log(`detune: ${this.state.detunes[0]}`);
+        break;
+      case 3:
+        let detunes_3 = this.state.detunes;
+        detunes_3[0] = this.state.detunes[0] + 1200 * (3 - prevOctave);
+        this.setState({
+          detunes: detunes_3
+        })
+        console.log(`detune: ${this.state.detunes[0]}`);
+        break;
+      case 4:
+        let detunes_4 = this.state.detunes;
+        detunes_4[0] = this.state.detunes[0] + 1200 * (4 - prevOctave);
+        this.setState({
+          detunes: detunes_4
+        })
+        console.log(`detune: ${this.state.detunes[0]}`);
+        break;
+      case 5:
+        let detunes_5 = this.state.detunes;
+        detunes_5[0] = this.state.detunes[0] + 1200 * (5 - prevOctave);
+        this.setState({
+          detunes: detunes_5
+        })
+        console.log(`detune: ${this.state.detunes[0]}`);
+        break;
+      }
   }
 
   setDetune(osc, v) {
@@ -94,9 +151,9 @@ class Synth extends React.Component {
   render() {
     return (
     <div>
-      <div> { this.state.volumes[0] } </div>
+      {/* <div> { this.state.volumes[0] } </div> */}
       <div className='synth'>
-     <Oscillator frequency={440}
+     <Oscillator frequency={ this.state.frequencies[0] }
                   detune={ this.state.detunes[0] }
                   waveform={ this.state.waveforms[0] }
                   volume={ this.state.volumes[0] }
@@ -109,7 +166,7 @@ class Synth extends React.Component {
                 label={'detune'}
                 markers={21}
                 fullAngle={300}
-                steps={[{label:-10},{label:-5},{label:'0'},{label:5},{label:10},{label:15}]}
+                steps={[{label:-10},{label:-5},{label:'0'},{label:5},{label:10}]}
                 onUpdate={ this.setDetune.bind(this, 0) }
                 value={ this.state.detunes[0]} />
           <Poti className='_colored yellow'
@@ -122,12 +179,12 @@ class Synth extends React.Component {
                 onUpdate={ this.setWav.bind(this, 0) }
                 value={ this.state.waveforms[0]} />
           <Poti className='_colored white'
-                range={[0,3]}
+                range={[0,5]}
                 size={60}
                 label={'octave'}
                 snap={true}
                 fullAngle={300}
-                steps={[{label:'0'},{label:'1'},{label:'2'},{label:'3'}]}
+                steps={[{label:'0'},{label:'1'},{label:'2'},{label:'3'}, {label:'4'}, {label:'5'}]}
                 onUpdate={ this.setOctave.bind(this, 0) }
                 value={ this.state.octaves[0]} />
           <Poti className='_colored red'
@@ -139,13 +196,13 @@ class Synth extends React.Component {
                 steps={[{label:'min'},{},{},{},{},{},{},{},{},{},{label:'max'}]}
                 onUpdate={ this.setVol.bind(this, 0) }
                 value={ this.state.volumes[0]} />
-          <Slider
+          {/* <Slider
                 min={ -60 }
                 max={ -8 }
                 step={ 1 }
                 value={ this.state.volumes[0] }
                 labelClassName={ 'test '}
-                onChange={ this.cutletSetVol.bind(0) }/>
+                onChange={ this.cutletSetVol }/> */}
 
         </Oscillator>
         <Keyboard onDown={this.startNote} onUp={this.stopNote}/>
