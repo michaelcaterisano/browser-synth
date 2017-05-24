@@ -34,8 +34,8 @@ var Keyboard = function (_React$Component) {
     _this.onMouseEnter = _this.onMouseEnter.bind(_this);
     _this.onMouseLeave = _this.onMouseLeave.bind(_this);
     _this.onMouseUp = _this.onMouseUp.bind(_this);
-    _this.onKeyUp = _this.onKeyUp.bind(_this);
-    _this.onKeyDown = _this.onKeyDown.bind(_this);
+    // _this.onKeyUp = _this.onKeyUp.bind(_this);
+    // _this.onKeyDown = _this.onKeyDown.bind(_this);
     _this.createKeys = _this.createKeys.bind(_this);
 
     _this.styles = {
@@ -60,8 +60,8 @@ var Keyboard = function (_React$Component) {
       74: 'B3'
     };
     _this.notes = ['C3', 'C#3', 'D3', 'D#3', 'E3', 'F3', 'F#3', 'G3', 'G#3', 'A3', 'A#3', 'B3'];
-    document.addEventListener('keydown', _this.onKeyDown);
-    document.addEventListener('keyup', _this.onKeyUp);
+    // document.addEventListener('keydown', _this.onKeyDown);
+    // document.addEventListener('keyup', _this.onKeyUp);
     document.addEventListener('mouseup', _this.onMouseUp);
     return _this;
   }
@@ -87,19 +87,19 @@ var Keyboard = function (_React$Component) {
   * @param  {Event} e the event
   */
 
-  Keyboard.prototype.onKeyDown = function onKeyDown(e) {
-    e.preventDefault();
-    if (this.state.down) {
-      return;
-    }
-    this.note = this.keyMap[e.which];
-    this.setState({
-      down: this.note
-    });
-    if (typeof this.props.onDown === 'function') {
-      this.props.onDown(this.note);
-    }
-  };
+  // Keyboard.prototype.onKeyDown = function onKeyDown(e) {
+  //   e.preventDefault();
+  //   if (this.state.down) {
+  //     return;
+  //   }
+  //   this.note = this.keyMap[e.which];
+  //   this.setState({
+  //     down: this.note
+  //   });
+  //   if (typeof this.props.onDown === 'function') {
+  //     this.props.onDown(this.note);
+  //   }
+  // };
 
   /**
    * handle mousemove events and updates the value
@@ -154,18 +154,18 @@ var Keyboard = function (_React$Component) {
    * @param  {Event} e the event
    */
 
-  Keyboard.prototype.onKeyUp = function onKeyUp(e) {
-    e.preventDefault();
-    this.note = this.keyMap[e.which];
-    if (this.note === this.state.down) {
-      this.setState({
-        down: false
-      });
-    }
-    if (typeof this.props.onDown === 'function') {
-      this.props.onUp(this.note);
-    }
-  };
+  // Keyboard.prototype.onKeyUp = function onKeyUp(e) {
+  //   e.preventDefault();
+  //   this.note = this.keyMap[e.which];
+  //   if (this.note === this.state.down) {
+  //     this.setState({
+  //       down: false
+  //     });
+  //   }
+  //   if (typeof this.props.onDown === 'function') {
+  //     this.props.onUp(this.note);
+  //   }
+  // };
 
   Keyboard.prototype.createKeys = function createKeys() {
     var _this2 = this;

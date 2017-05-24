@@ -2,6 +2,7 @@ import React from 'react';
 import Keyboard from '../Keyboard/Keyboard'
 import Oscillator from '../Oscillator/Oscillator'
 import Poti from '../Poti/Poti'
+import Slider from 'material-ui/Slider';
 import Tone from 'tone'
 import './synth.css'
 
@@ -34,7 +35,14 @@ class Synth extends React.Component {
     this.setWav = this.setWav.bind(this);
     this.startNote = this.startNote.bind(this);
     this.stopNote = this.stopNote.bind(this);
-
+    this.cutletSetVol = this.cutletSetVol.bind(this);
+  }
+  cutletSetVol(event, value) {
+    let volume = { 0: value }
+    this.setState({
+        volumes: volume
+    });
+    console.log(volume)
   }
   setDetune(osc, v) {
     let detunes = this.state.detunes;
@@ -46,6 +54,7 @@ class Synth extends React.Component {
   setVol(osc, v) {
     let volumes = this.state.volumes;
     volumes[osc] = v;
+    console.log()
     this.setState({
       volumes: volumes
     });
@@ -69,6 +78,8 @@ class Synth extends React.Component {
  }
   render() {
     return (
+    <div>
+      <div> { this.state.volumes[0] } </div>
       <div className='synth'>
      <Oscillator frequency={440}
                   detune={ this.state.detunes[0] }
@@ -104,10 +115,18 @@ class Synth extends React.Component {
                 steps={[{label:'min'},{},{},{},{},{},{},{},{},{},{label:'max'}]}
                 onUpdate={ this.setVol.bind(this, 0) }
                 value={ this.state.volumes[0]} />
+          <Slider
+                min={ -60 }
+                max={ -8 }
+                step={ 1 }
+                value={ this.state.volumes[0] }
+                onChange={ this.cutletSetVol.bind(0) }/>
 
         </Oscillator>
         <Keyboard onDown={this.startNote} onUp={this.stopNote}/>
-      </div>);
+      </div>
+  </div>
+  );
   }
 }
 
