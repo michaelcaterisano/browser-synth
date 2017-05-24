@@ -13,7 +13,7 @@ class Synth extends React.Component {
     this.envelope = new Tone.AmplitudeEnvelope({
 			attack : 0.41,
 			decay : 0.21,
-		  sustain : 0.9,
+		    sustain : 0.9,
 			release : .9
 		}).toMaster()
     this.state = {
@@ -28,6 +28,9 @@ class Synth extends React.Component {
       },
       waveforms: {
         0: 1
+      },
+      octaves: {
+        0: 3
       }
     };
     this.setDetune = this.setDetune.bind(this);
@@ -36,7 +39,9 @@ class Synth extends React.Component {
     this.startNote = this.startNote.bind(this);
     this.stopNote = this.stopNote.bind(this);
     this.cutletSetVol = this.cutletSetVol.bind(this);
+    this.setOctave = this.setOctave.bind(this);
   }
+
   cutletSetVol(event, value) {
     let volume = { 0: value }
     this.setState({
@@ -44,6 +49,11 @@ class Synth extends React.Component {
     });
     console.log(volume)
   }
+
+  setOctave(event, value) {
+    console.log(value)
+  }
+
   setDetune(osc, v) {
     let detunes = this.state.detunes;
     detunes[osc] = v;
@@ -51,6 +61,7 @@ class Synth extends React.Component {
       detunes: detunes
     });
   }
+
   setVol(osc, v) {
     let volumes = this.state.volumes;
     volumes[osc] = v;
@@ -59,6 +70,7 @@ class Synth extends React.Component {
       volumes: volumes
     });
   }
+
   setWav(osc, v) {
     let waveforms = this.state.waveforms;
    waveforms[osc] = v;
@@ -67,15 +79,18 @@ class Synth extends React.Component {
       waveforms: waveforms
     });
   }
+
   startNote(note) {
     this.setState({playing: note});
 
      this.envelope.triggerAttack();
   }
+
   stopNote(note) {
     this.setState({playing: false});
     this.envelope.triggerRelease();
  }
+
   render() {
     return (
     <div>
@@ -94,7 +109,7 @@ class Synth extends React.Component {
                 label={'detune'}
                 markers={21}
                 fullAngle={300}
-                steps={[{label:-10},{label:-5},{label:'0'},{label:5},{label:10}]}
+                steps={[{label:-10},{label:-5},{label:'0'},{label:5},{label:10},{label:15}]}
                 onUpdate={ this.setDetune.bind(this, 0) }
                 value={ this.state.detunes[0]} />
           <Poti className='_colored yellow'
@@ -106,6 +121,15 @@ class Synth extends React.Component {
                 steps={[{label:'sin'},{label:'sqr'},{label:'tri'},{label:'saw'}]}
                 onUpdate={ this.setWav.bind(this, 0) }
                 value={ this.state.waveforms[0]} />
+          <Poti className='_colored white'
+                range={[0,3]}
+                size={60}
+                label={'octave'}
+                snap={true}
+                fullAngle={300}
+                steps={[{label:'0'},{label:'1'},{label:'2'},{label:'3'}]}
+                onUpdate={ this.setOctave.bind(this, 0) }
+                value={ this.state.octaves[0]} />
           <Poti className='_colored red'
                 range={[-50,20]}
                 size={60}
@@ -120,6 +144,7 @@ class Synth extends React.Component {
                 max={ -8 }
                 step={ 1 }
                 value={ this.state.volumes[0] }
+                labelClassName={ 'test '}
                 onChange={ this.cutletSetVol.bind(0) }/>
 
         </Oscillator>
