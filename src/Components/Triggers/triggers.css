@@ -1,0 +1,14 @@
+.triggers-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px; }
+
+.widgets-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw; }
+
+.trigger {
+  margin-right: 20px; }

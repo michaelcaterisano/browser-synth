@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton'
 import Synth from '../Synth/Synth'
 // import Poti from '../Poti/Poti'
-// import './Triggers.css'
+import './triggers.css'
 
 class Triggers extends Component {
     constructor() {
@@ -30,7 +30,7 @@ class Triggers extends Component {
             <div>
                 <div className="triggers-wrapper">
                     <div className="triggers-container">
-                        <RaisedButton label="add" onClick={this.add.bind(this)}/>
+                        <RaisedButton className='trigger' label="add" onClick={this.add.bind(this)}/>
                         <RaisedButton label="remove" onClick={this.remove.bind(this)} />
                     </div>
                 </div>
