@@ -18,7 +18,7 @@ class Oscillator extends Component {
     this.tone02 = new Tone.Oscillator({
       frequency: this.props.frequency,
       type: this.waves[this.props.waveform],
-      volume: this.props.volumeaf
+      volume: this.props.volume
     }).connect(this.env).start()
 
 

@@ -17,23 +17,20 @@ class Synth extends React.Component {
 			release : .9
 		}).toMaster()
     this.state = {
-      frequencies: {
-        0: 440
-      },
       detunes: {
-        0: 0,
-        1: 0
+        0: -1200,
+        1: -2400
       },
       volumes: {
         0: -20
       },
       waveforms: {
         0: 1,
-        1: 0
+        1: 3
       },
       octaves: {
-        0: 3,
-        1: 3
+        0: 2,
+        1: 1
       }
     };
     this.setDetune = this.setDetune.bind(this);
@@ -43,7 +40,7 @@ class Synth extends React.Component {
     this.stopNote = this.stopNote.bind(this);
     this.cutletSetVol = this.cutletSetVol.bind(this);
     this.setOctave = this.setOctave.bind(this);
-    // this.setOctave2 = this.setOctave2.bind(this);
+    this.setOctaveSlider = this.setOctaveSlider.bind(this);
   }
 
   /**
@@ -55,7 +52,6 @@ class Synth extends React.Component {
         volumes: volume
     });
   }
-
   /**
   * Sets octave
   */
@@ -74,7 +70,6 @@ class Synth extends React.Component {
   }
 
   setOctaveSlider(osc, event, v) {
-    console.log(`${osc} ${event} ${v}`)
     this.setOctave(osc, v)
   }
   /**
@@ -122,9 +117,8 @@ class Synth extends React.Component {
   render() {
     return (
     <div>
-      {/* <div> { this.state.volumes[0] } </div> */}
       <div className='synth'>
-     <Oscillator frequency={ this.state.frequencies[0] }
+     <Oscillator
                  detune0={ this.state.detunes[0] }
                  detune01={ this.state.detunes[1] }
                  waveform0={ this.state.waveforms[0] }
@@ -133,15 +127,6 @@ class Synth extends React.Component {
                  type={ 'square' }
                  envelope={this.envelope}
                  playing={this.state.playing}>
-          {/* <Poti className='_colored orange'
-                range={[-50,50]}
-                size={60}
-                label={'detune'}
-                markers={21}
-                fullAngle={300}
-                steps={[{label:-10},{label:-5},{label:'0'},{label:5},{label:10}]}
-                onUpdate={ this.setDetune.bind(this, 0) }
-                value={ this.state.detunes[0]} /> */}
           <Poti className='_colored green'
                 range={[0,3]}
                 size={60}
@@ -160,15 +145,6 @@ class Synth extends React.Component {
                 steps={[{label:'sin'},{label:'sqr'},{label:'tri'},{label:'saw'}]}
                 onUpdate={ this.setWav.bind(this, 1) }
                 value={ this.state.waveforms[1]} />
-          {/* <Poti className='_colored white'
-                range={[0,5]}
-                size={60}
-                label={'octave'}
-                snap={true}
-                fullAngle={300}
-                steps={[{label:'0'},{label:'1'},{label:'2'},{label:'3'}, {label:'4'}, {label:'5'}]}
-                onUpdate={ this.setOctave.bind(this, 0) }
-                value={ this.state.octaves[0]} /> */}
           <Poti className='_colored red'
                 range={[-50,-8]}
                 size={60}
@@ -193,22 +169,7 @@ class Synth extends React.Component {
                   value={ this.state.octaves[1] }
                   onChange={ this.setOctaveSlider.bind(this, 1) }/>
           </div>
-          {/* <div className='sliders__octave'>
-            <Slider
-                  min={ 0 }
-                  max={ 5 }
-                  step={ 1 }
-                  value={ this.state.octaves[0] }
-                  onChange={ this.setOctaveSlider.bind(this, 0) }/>
-            <Slider
-                  min={ 0 }
-                  max={ 5 }
-                  step={ 1 }
-                  value={ this.state.octaves[1] }
-                  onChange={ this.setOctaveSlider.bind(this, 1) }/>
-          </div> */}
         </div>
-
         </Oscillator>
         <Keyboard onDown={this.startNote} onUp={this.stopNote}/>
       </div>
