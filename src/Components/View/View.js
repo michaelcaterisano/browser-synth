@@ -5,7 +5,7 @@ import './view.css'
 class View extends Component {
     render() {
         return (
-            <div className='balls'>
+            <div className='mysynth'>
                 <Synth />
             </div>
         )

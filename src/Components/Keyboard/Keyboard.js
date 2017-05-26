@@ -106,6 +106,7 @@ var Keyboard = function (_React$Component) {
         down: this.note
       });
       if (typeof this.props.onDown === 'function') {
+        console.log(this.props.onDown)
         this.props.onDown(this.note);
       }
     }

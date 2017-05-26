@@ -7,7 +7,7 @@ class Oscillator extends Component {
     super(props);
 
     this.env = this.props.envelope;
-   this.waves = ['sine','square','triangle','sawtooth'];
+    this.waves = ['sine','square','triangle','sawtooth'];
 
     this.tone = new Tone.Oscillator({
       frequency: this.props.frequency,
@@ -15,9 +15,10 @@ class Oscillator extends Component {
       volume: this.props.volume
     }).connect(this.env).start();
 
+
   }
   componentWillReceiveProps(newProps) {
-    this.tone.detune.value = newProps.detune;
+    this.tone.detune.value = newProps.detune0;
     this.tone.volume.value = newProps.volume;
     this.tone.type = this.waves[newProps.waveform];
     if (newProps.playing ) {
@@ -25,7 +26,6 @@ class Oscillator extends Component {
     }
   }
   render() {
-    let ret;
     return (<div className="oscillator">
               <br/>
               { this.props.children }
