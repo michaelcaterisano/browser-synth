@@ -11,7 +11,7 @@ class Synth extends React.Component {
   constructor(props) {
     super(props);
     this.envelope = new Tone.AmplitudeEnvelope({
-			attack : 0.41,
+			attack : 0.1,
 			decay : 0.21,
 		    sustain : 0.9,
 			release : .9
@@ -142,7 +142,7 @@ class Synth extends React.Component {
                 steps={[{label:-10},{label:-5},{label:'0'},{label:5},{label:10}]}
                 onUpdate={ this.setDetune.bind(this, 0) }
                 value={ this.state.detunes[0]} /> */}
-          <Poti className='_colored yellow'
+          <Poti className='_colored green'
                 range={[0,3]}
                 size={60}
                 label={'osc1'}
@@ -178,18 +178,36 @@ class Synth extends React.Component {
                 steps={[{label:'min'},{},{},{},{},{},{},{},{},{},{label:'max'}]}
                 onUpdate={ this.setVol.bind(this, 0) }
                 value={ this.state.volumes[0]} />
-          <Slider
-                min={ 0 }
-                max={ 5 }
-                step={ 1 }
-                value={ this.state.octaves[0] }
-                onChange={ this.setOctaveSlider.bind(this, 0) }/>
-          <Slider
-                min={ 0 }
-                max={ 5 }
-                step={ 1 }
-                value={ this.state.octaves[1] }
-                onChange={ this.setOctaveSlider.bind(this, 1) }/>
+          <div className='sliders__wrapper'>
+          <div className='sliders__octave'>
+            <Slider
+                  min={ 0 }
+                  max={ 5 }
+                  step={ 1 }
+                  value={ this.state.octaves[0] }
+                  onChange={ this.setOctaveSlider.bind(this, 0) }/>
+            <Slider
+                  min={ 0 }
+                  max={ 5 }
+                  step={ 1 }
+                  value={ this.state.octaves[1] }
+                  onChange={ this.setOctaveSlider.bind(this, 1) }/>
+          </div>
+          {/* <div className='sliders__octave'>
+            <Slider
+                  min={ 0 }
+                  max={ 5 }
+                  step={ 1 }
+                  value={ this.state.octaves[0] }
+                  onChange={ this.setOctaveSlider.bind(this, 0) }/>
+            <Slider
+                  min={ 0 }
+                  max={ 5 }
+                  step={ 1 }
+                  value={ this.state.octaves[1] }
+                  onChange={ this.setOctaveSlider.bind(this, 1) }/>
+          </div> */}
+        </div>
 
         </Oscillator>
         <Keyboard onDown={this.startNote} onUp={this.stopNote}/>

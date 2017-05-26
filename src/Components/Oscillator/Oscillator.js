@@ -18,7 +18,7 @@ class Oscillator extends Component {
     this.tone02 = new Tone.Oscillator({
       frequency: this.props.frequency,
       type: this.waves[this.props.waveform],
-      volume: -20
+      volume: this.props.volumeaf
     }).connect(this.env).start()
 
 
@@ -27,6 +27,7 @@ class Oscillator extends Component {
     this.tone.detune.value = newProps.detune0;
     this.tone02.detune.value = newProps.detune01;
     this.tone.volume.value = newProps.volume;
+    this.tone02.volume.value = newProps.volume;
     this.tone.type = this.waves[newProps.waveform0];
     this.tone02.type = this.waves[newProps.waveform01]
     if (newProps.playing ) {

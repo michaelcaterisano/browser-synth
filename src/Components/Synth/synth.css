@@ -1,6 +1,13 @@
+.sliders__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.sliders__octave {
+  width: 40%; }
+
 .Keyboard {
   display: flex;
-  flex-wrap: wrap;
   position: relative;
   overflow: hidden;
   background: black;
@@ -181,8 +188,8 @@
     color: #111;
     font-size: 6px; }
 
-.Poti._colored.orange .PotiKnob {
-  color: orange; }
+.Poti._colored.green .PotiKnob {
+  color: green; }
 
 .Poti._colored.red .PotiKnob {
   color: red; }
@@ -199,7 +206,6 @@
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset; }
 
 .synth {
-  max-width: 400px;
   text-align: center;
   position: relative;
   margin: 50px;
@@ -207,7 +213,7 @@
   display: inline-block;
   padding: 0 20px;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3) inset;
-  background-color: #522914;
+  background-color: #1414aa;
   background-image: radial-gradient(10px 90px, 6px 120px, transparent 10%, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 40%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.05) 60%, transparent 60%), radial-gradient(70px 130px, 8px 180px, transparent 10%, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 40%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.05) 60%, transparent 60%), radial-gradient(20px 120px, 6px 120px, transparent 10%, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 40%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.05) 60%, transparent 60%), linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.05) 15%, transparent 40%, rgba(255, 255, 255, 0.05) 60%, transparent 70%), linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.05) 10%, transparent 50%, rgba(255, 255, 255, 0.05) 60%, transparent 65%), linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.05) 10%, transparent 55%, rgba(255, 255, 255, 0.05) 60%, transparent 60%), linear-gradient(to top right, rgba(0, 0, 0, 0.2), transparent 60%);
   background-size: 250px 200px, 120px 300px,100px 500px,8px 100%, 12px 100%, 20px 100%, 100% 100%;
   box-shadow: 0 -26px 0 0 rgba(0, 0, 0, 0.5) inset, 0 -26px 10px 0 rgba(255, 255, 255, 0.2) inset; }
@@ -217,7 +223,7 @@
     top: -3px;
     bottom: -3px;
     width: 40px;
-    background-color: #66331a;
+    background-color: #a0280a;
     background-image: inherit;
     background-size: inherit;
     border-radius: 3px; }

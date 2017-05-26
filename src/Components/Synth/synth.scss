@@ -5,9 +5,16 @@ $roundness: 2px;
 $d3-inensity: 20px;
 $key-chip: false; // false or px value
 
+.sliders__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.sliders__octave {
+  width: 40%;
+}
 .Keyboard {
   display: flex;
-  flex-wrap: wrap;
   position: relative;
   overflow: hidden;
   background: black;
@@ -165,7 +172,7 @@ $key-chip: false; // false or px value
 }
 
 
-$colors: (red: red, orange: orange, yellow: yellow, white: white, grey: #ccc, dark-grey: #1E1E1E, black: #111, background: #28282B);
+$colors: (green: green, red: red, orange: orange, yellow: yellow, white: white, grey: #ccc, dark-grey: #1E1E1E, black: #111, background: #28282B);
 
 @function color($name) {
   @return map-get($colors, $name);
@@ -302,9 +309,9 @@ $colors: (red: red, orange: orange, yellow: yellow, white: white, grey: #ccc, da
 }
 
 
-@include Poti(orange) {
+@include Poti(green) {
   .PotiKnob {
-    color: color(orange);
+    color: color(green);
   }
 }
 
@@ -331,7 +338,6 @@ $colors: (red: red, orange: orange, yellow: yellow, white: white, grey: #ccc, da
   box-shadow: 0 0 0 1px rgba(black,0.3) inset;
 }
 .synth {
-  max-width: 400px;
   text-align: center;
   position: relative;
   margin: 50px;
@@ -339,7 +345,7 @@ $colors: (red: red, orange: orange, yellow: yellow, white: white, grey: #ccc, da
   display: inline-block;
   padding: 0 20px;
   box-shadow: 0 0 0 2px rgba(black,0.3) inset;
-  background-color: hsl(20,60%,20%);
+  background-color: rgb(20, 20, 170);
   background-image:
     radial-gradient(10px 90px, 6px 120px, rgba(black,0) 10%,rgba(black,0.05) 10%,rgba(black,0.05) 40%,rgba(white,0) 40%,rgba(white,0.05) 60%,rgba(black,0) 60%),
     radial-gradient(70px 130px, 8px 180px, rgba(black,0) 10%,rgba(black,0.05) 10%,rgba(black,0.05) 40%,rgba(white,0) 40%,rgba(white,0.05) 60%,rgba(black,0) 60%),
@@ -358,7 +364,7 @@ $colors: (red: red, orange: orange, yellow: yellow, white: white, grey: #ccc, da
     top: -3px;
     bottom: -3px;
     width: 40px;
-    background-color: hsl(20,60%,25%);
+    background-color: rgb(160,40,10);
     background-image: inherit;
     background-size: inherit;
     border-radius: 3px;

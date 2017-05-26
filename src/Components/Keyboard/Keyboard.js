@@ -64,7 +64,7 @@ var Keyboard = function (_React$Component) {
       59: 'E4'
 
     };
-    _this.notes = ['C3', 'C#3', 'D3', 'D#3', 'E3', 'F3', 'F#3', 'G3', 'G#3', 'A3', 'A#3', 'B3', 'C4', 'C#4', 'D4', 'D#4'];
+    _this.notes = ['C3', 'C#3', 'D3', 'D#3', 'E3', 'F3', 'F#3', 'G3', 'G#3', 'A3', 'A#3', 'B3', 'C4', 'C#4', 'D4', 'D#4', 'E4'];
     document.addEventListener('keydown', _this.onKeyDown);
     document.addEventListener('keyup', _this.onKeyUp);
     document.addEventListener('mouseup', _this.onMouseUp);
@@ -182,7 +182,7 @@ var Keyboard = function (_React$Component) {
     var _this2 = this;
 
     var activeKey = this.notes.indexOf(this.state.down);
-    var visual = ['left', 'black', 'center', 'black', 'right', 'left', 'black', 'center', 'black', 'center', 'black', 'right', 'left', 'black', 'center', 'black', 'right', 'left', 'black', 'center', 'black', 'center', 'black', 'right', 'end'];
+    var visual = ['left', 'black', 'center', 'black', 'right', 'left', 'black', 'center', 'black', 'center', 'black', 'right', 'left', 'black', 'center', 'black', 'right'];
     var keys = this.notes.map(function (item, index) {
       var active = activeKey === index;
       var classes = classNames(visual[index], 'key', {
