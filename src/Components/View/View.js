@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import Triggers from '../Triggers/Triggers'
+import Synth from '../Synth/Synth'
+import './view.css'
 
 class View extends Component {
     render() {
         return (
-            <div>
-                <Triggers />
+            <div className='balls'>
+                <Synth />
             </div>
         )
     }

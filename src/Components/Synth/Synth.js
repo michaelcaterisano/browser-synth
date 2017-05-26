@@ -56,9 +56,7 @@ class Synth extends React.Component {
     this.setState({
       octaves: octaves
     });
-    // console.log(`prevoct: ${prevOctave}`)
-    // console.log(`this.state.octaves: ${this.state.octaves[0]}`)
-
+    
     switch (value) {
       case 0:
         let detunes_0 = this.state.detunes;
@@ -188,7 +186,7 @@ class Synth extends React.Component {
                 onUpdate={ this.setOctave.bind(this, 0) }
                 value={ this.state.octaves[0]} />
           <Poti className='_colored red'
-                range={[-50,20]}
+                range={[-50,-8]}
                 size={60}
                 label={'volume'}
                 markers={21}
