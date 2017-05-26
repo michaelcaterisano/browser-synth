@@ -28,7 +28,8 @@ class Synth extends React.Component {
         0: -20
       },
       waveforms: {
-        0: 1
+        0: 1,
+        1: 0
       },
       octaves: {
         0: 3,
@@ -126,12 +127,13 @@ class Synth extends React.Component {
      <Oscillator frequency={ this.state.frequencies[0] }
                  detune0={ this.state.detunes[0] }
                  detune01={ this.state.detunes[1] }
-                 waveform={ this.state.waveforms[0] }
+                 waveform0={ this.state.waveforms[0] }
+                 waveform01={ this.state.waveforms[1] }
                  volume={ this.state.volumes[0] }
                  type={ 'square' }
                  envelope={this.envelope}
                  playing={this.state.playing}>
-          <Poti className='_colored orange'
+          {/* <Poti className='_colored orange'
                 range={[-50,50]}
                 size={60}
                 label={'detune'}
@@ -139,16 +141,25 @@ class Synth extends React.Component {
                 fullAngle={300}
                 steps={[{label:-10},{label:-5},{label:'0'},{label:5},{label:10}]}
                 onUpdate={ this.setDetune.bind(this, 0) }
-                value={ this.state.detunes[0]} />
+                value={ this.state.detunes[0]} /> */}
           <Poti className='_colored yellow'
                 range={[0,3]}
                 size={60}
-                label={'waveform'}
+                label={'osc1'}
                 snap={true}
                 fullAngle={300}
                 steps={[{label:'sin'},{label:'sqr'},{label:'tri'},{label:'saw'}]}
                 onUpdate={ this.setWav.bind(this, 0) }
                 value={ this.state.waveforms[0]} />
+          <Poti className='_colored yellow'
+                range={[0,3]}
+                size={60}
+                label={'osc2'}
+                snap={true}
+                fullAngle={300}
+                steps={[{label:'sin'},{label:'sqr'},{label:'tri'},{label:'saw'}]}
+                onUpdate={ this.setWav.bind(this, 1) }
+                value={ this.state.waveforms[1]} />
           {/* <Poti className='_colored white'
                 range={[0,5]}
                 size={60}
@@ -167,6 +178,12 @@ class Synth extends React.Component {
                 steps={[{label:'min'},{},{},{},{},{},{},{},{},{},{label:'max'}]}
                 onUpdate={ this.setVol.bind(this, 0) }
                 value={ this.state.volumes[0]} />
+          <Slider
+                min={ 0 }
+                max={ 5 }
+                step={ 1 }
+                value={ this.state.octaves[0] }
+                onChange={ this.setOctaveSlider.bind(this, 0) }/>
           <Slider
                 min={ 0 }
                 max={ 5 }
