@@ -15,14 +15,22 @@ class Oscillator extends Component {
       volume: this.props.volume
     }).connect(this.env).start();
 
+    this.tone02 = new Tone.Oscillator({
+      frequency: this.props.frequency,
+      type: 'square',
+      volume: -20
+    }).connect(this.env).start()
+
 
   }
   componentWillReceiveProps(newProps) {
     this.tone.detune.value = newProps.detune0;
+    this.tone02.detune.value = newProps.detune01;
     this.tone.volume.value = newProps.volume;
     this.tone.type = this.waves[newProps.waveform];
     if (newProps.playing ) {
      this.tone.frequency.value = newProps.playing;
+     this.tone02.frequency.value = newProps.playing;
     }
   }
   render() {

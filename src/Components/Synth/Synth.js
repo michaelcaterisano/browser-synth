@@ -124,7 +124,8 @@ class Synth extends React.Component {
       {/* <div> { this.state.volumes[0] } </div> */}
       <div className='synth'>
      <Oscillator frequency={ this.state.frequencies[0] }
-                 detune0={ this.state.detunes[1] }
+                 detune0={ this.state.detunes[0] }
+                 detune01={ this.state.detunes[1] }
                  waveform={ this.state.waveforms[0] }
                  volume={ this.state.volumes[0] }
                  type={ 'square' }
