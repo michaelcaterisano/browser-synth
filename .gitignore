@@ -1,1 +1,4 @@
 node_modules
+build
+.tokensave
+.tool-versions
